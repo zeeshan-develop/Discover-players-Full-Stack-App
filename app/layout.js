@@ -1,16 +1,8 @@
-import localFont from "next/font/local";
+import Authprovider from "@/components/Authprovider/Authprovider";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { Header } from "@/components/Header";
+import { PostsProvider } from "./context/PostsContext";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,10 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <Authprovider>
+          <PostsProvider>
+            <ToastContainer />
+            <Header />
+            {children}
+          </PostsProvider>
+        </Authprovider>
+
+        {/* Using CDN for Flowbite */}
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
       </body>
     </html>
   );
