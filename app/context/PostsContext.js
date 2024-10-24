@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import app from "../shared/FirebaseConfig";
+import Swal from "sweetalert2";
 
 const PostsContext = createContext();
 
@@ -21,7 +22,12 @@ export const PostsProvider = ({ children }) => {
 
       setPosts(postsArray);
     } catch (error) {
-      console.error("Error getting documents: ", error);
+      Swal.fire({
+        icon: "error",
+        title: "Error getting documents",
+        text: error.message,
+        confirmButtonText: "Ok",
+      });
     }
   };
 
