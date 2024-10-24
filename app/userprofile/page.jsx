@@ -9,11 +9,11 @@ import Swal from "sweetalert2";
 const UserProfile = () => {
   const { data: session } = useSession();
   const db = getFirestore(app);
-  const { posts } = usePosts();
+  const { posts, getPost } = usePosts();
 
   const handleDelete = async (postId) => {
     try {
-      const postRef = doc(db, "posts", postId); // Adjust "posts" based on your Firestore collection name
+      const postRef = doc(db, "posts", postId);
       await deleteDoc(postRef);
       Swal.fire({
         icon: "success",
@@ -21,9 +21,14 @@ const UserProfile = () => {
         text: "Your post has been successfully deleted.",
         confirmButtonText: "Ok",
       });
-      console.log("!");
+      getPost();
     } catch (error) {
-      console.error("Error deleting post: ", error);
+      Swal.fire({
+        icon: "error",
+        title: "Delete!",
+        text: error.message,
+        confirmButtonText: "Ok",
+      });
     }
   };
   return (

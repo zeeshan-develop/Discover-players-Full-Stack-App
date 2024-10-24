@@ -9,10 +9,10 @@ import Swal from "sweetalert2";
 import DatePicker from "@/components/(form)/DatePicker";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { format } from "date-fns";
 import app from "../shared/FirebaseConfig";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { usePosts } from "../context/PostsContext";
 
 const createValidationSchema = Yup.object().shape({
   title: Yup.string()
@@ -51,7 +51,7 @@ const CreatePosts = () => {
   } = methods;
   const { data: session } = useSession();
   const router = useRouter();
-
+  const { getPost } = usePosts();
   useEffect(() => {
     if (!session) {
       const timer = setTimeout(() => {
@@ -91,13 +91,12 @@ const CreatePosts = () => {
       title: "Submission Successful",
       text: "Your data has been submitted successfully!",
       confirmButtonText: "Ok",
-    })
-      .then(() => {
-        reset();
-      })
-      .catch(() => {
-        toast.error("Error uploading file. Please try again.");
-      });
+    }).then(() => {
+      reset();
+    });
+    getPost().catch(() => {
+      toast.error("Error uploading file. Please try again.");
+    });
   };
 
   return (

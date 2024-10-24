@@ -7,7 +7,6 @@ const PostsDetail = () => {
   const { posts } = usePosts();
   const { Id: postId } = useParams();
   const detail = posts[postId];
-  
 
   return (
     <div>
@@ -23,7 +22,7 @@ const PostsDetail = () => {
               <h2 class="text-sm title-font text-gray-500 tracking-widest">
                 Game
               </h2>
-              <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
+              <h1 class="text-gray-900 text-3xl title-font font-medium mb-3">
                 {detail?.title}
               </h1>
               <div class="flex mb-4">
@@ -124,7 +123,7 @@ const PostsDetail = () => {
                   </a>
                 </span>
               </div>
-              <p class="leading-relaxed text-justify">
+              <p class="leading-relaxed text-justify mb-8">
                 Fam locavore kickstarter distillery. Mixtape chillwave tumeric
                 sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo
                 juiceramps cornhole raw denim forage brooklyn. Everyday carry +1

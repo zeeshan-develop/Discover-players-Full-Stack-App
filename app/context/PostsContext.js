@@ -31,6 +31,7 @@ export const PostsProvider = ({ children }) => {
 
   const postData = {
     posts,
+    getPost,
   };
 
   return (
