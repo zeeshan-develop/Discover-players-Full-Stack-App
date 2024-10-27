@@ -1,3 +1,5 @@
+![Alt text](https://firebasestorage.googleapis.com/v0/b/project-gallery-tool.appspot.com/o/gallerytool%2Fdiscover%20player%20app.png?alt=media&token=5a48cdc5-dc8b-4503-93b3-885e07ea40d5)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
