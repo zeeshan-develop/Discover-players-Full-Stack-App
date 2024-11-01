@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { PostsProvider } from "./context/PostsContext";
 import { ToastContainer } from "react-toastify";
+import Script from "next/script";
 
 export const metadata = {
   title: "Create Next App",
@@ -21,8 +22,11 @@ export default function RootLayout({ children }) {
           </PostsProvider>
         </Authprovider>
 
-        {/* Using CDN for Flowbite */}
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+        {/* Load Flowbite script asynchronously */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

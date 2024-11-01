@@ -1,16 +1,21 @@
 import React from "react";
+import Image from "next/image"; // Import the Image component
 import { SlCalender } from "react-icons/sl";
 import { MdLocationPin } from "react-icons/md";
 import Link from "next/link";
+
 const Postitem = ({ post, del, val }) => {
   return (
     <>
       <div className="p-8 md:w-1/3" key={val} data-aos="fade-left">
-        <div className="h-full border-2 border-gray-200 border-opacity-60  overflow-hidden">
-          <img
+        <div className="h-full border-2 border-gray-200 border-opacity-60 overflow-hidden">
+          <Image
             className="lg:h-72 md:h-36 w-full object-cover object-center transition-transform duration-300 ease-in-out transform hover:scale-110"
             src={post.image}
             alt="blog"
+            width={500} // Provide a width for optimization
+            height={300} // Provide a height for optimization
+            layout="responsive" // Ensures the image maintains aspect ratio
           />
           <div className="p-6">
             <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
@@ -29,7 +34,7 @@ const Postitem = ({ post, del, val }) => {
               <h5>{post.location}</h5>
             </div>
             <p className="leading-relaxed mb-3">{post.desc}</p>
-            <div className="flex items-center flex-wrap ">
+            <div className="flex items-center flex-wrap">
               <Link
                 href={`/posts/${val}`}
                 className="text-white inline-flex items-center md:mb-2 lg:mb-0 border bg-blue-500 p-4 rounded-md cursor-pointer"

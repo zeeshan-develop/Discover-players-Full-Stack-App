@@ -29,7 +29,7 @@ const Posts = ({ posts }) => {
             {session?.user.email && (
               <>
                 {posts.map((post, index) => (
-                  <Postitem post={post} val={index} />
+                  <Postitem post={post} val={index} key={index} />
                 ))}
               </>
             )}

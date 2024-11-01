@@ -7,7 +7,7 @@ const Gamelists = () => {
 
   useEffect(() => {
     setListsData(GameListsData);
-  });
+  }, []);
   return (
     <div className="container px-5 py-24 mx-auto">
       <div className="flex flex-wrap   justify-center ">

@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import app from "../shared/FirebaseConfig";
 import Swal from "sweetalert2";
@@ -10,7 +16,7 @@ export const PostsProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const db = getFirestore(app);
 
-  const getPost = async () => {
+  const getPost = useCallback(async () => {
     try {
       const querySnapshot = await getDocs(collection(db, "posts"));
       const postsArray = [];
@@ -29,11 +35,11 @@ export const PostsProvider = ({ children }) => {
         confirmButtonText: "Ok",
       });
     }
-  };
+  }, [db]);
 
   useEffect(() => {
     getPost();
-  }, []);
+  }, [getPost]);
 
   const postData = {
     posts,

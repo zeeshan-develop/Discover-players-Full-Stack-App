@@ -6,7 +6,7 @@ const Search = () => {
   const [searchtext, setSearchtext] = useState();
 
   const onSearchButon = () => {
-    console.log("search player value", searchtext);
+    // console.log("search player value", searchtext);
   };
   return (
     <div>
@@ -21,9 +21,9 @@ const Search = () => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
             />
           </svg>

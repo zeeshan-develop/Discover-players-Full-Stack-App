@@ -33,6 +33,15 @@ const UserProfile = () => {
   };
   return (
     <div>
+      <div class="text-center mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
+          Profile Configuration
+        </h1>
+
+        <div class="flex mt-6 justify-center">
+          <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+        </div>
+      </div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto mt-4">
           <div className="flex flex-wrap -m-4">
@@ -41,6 +50,7 @@ const UserProfile = () => {
                 {posts.map((post, index) => (
                   <Postitem
                     post={post}
+                    key={index}
                     val={index}
                     del={
                       <button
