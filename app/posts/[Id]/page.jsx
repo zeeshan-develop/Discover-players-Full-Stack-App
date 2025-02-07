@@ -40,7 +40,7 @@ const PostsDetail = () => {
                 or teams and have established rules and objectives. Sports can
                 be recreational, competitive, or professional, and they are
                 enjoyed all over the world, both for entertainment and fitness.
-                Here's an overview of some common types of sports
+                Here is an overview of some common types of sports
               </p>
 
               <div className="flex">

@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react";
 const Posts = ({ posts, searchTerm }) => {
   const { data: session } = useSession();
 
-  const filteredPosts = posts.filter((post) =>
+  const filteredPosts = posts?.filter((post) =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
