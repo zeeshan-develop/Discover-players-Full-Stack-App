@@ -5,14 +5,13 @@ import "aos/dist/aos.css";
 import Postitem from "./Postitem";
 import { useSession } from "next-auth/react";
 
-const Posts = ({ posts }) => {
+const Posts = ({ posts, searchTerm }) => {
   const { data: session } = useSession();
-  const formatDate = (date) => {
-    if (date && date.seconds) {
-      return new Date(date.seconds * 1000).toLocaleDateString();
-    }
-    return date;
-  };
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   useEffect(() => {
     AOS.init({
       offset: 120,
@@ -24,13 +23,17 @@ const Posts = ({ posts }) => {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto mt-4">
+        <div className="container px-5 py-24 mx-auto mt-4 overflow-hidden">
           <div className="flex flex-wrap -m-4">
             {session?.user.email && (
               <>
-                {posts.map((post, index) => (
-                  <Postitem post={post} val={index} key={index} />
-                ))}
+                {filteredPosts.length > 0 ? (
+                  filteredPosts.map((post, index) => (
+                    <Postitem post={post} val={index} key={index} />
+                  ))
+                ) : (
+                  <p className="text-gray-500">No results found</p>
+                )}
               </>
             )}
           </div>

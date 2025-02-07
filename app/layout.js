@@ -17,12 +17,13 @@ export default function RootLayout({ children }) {
         <Authprovider>
           <PostsProvider>
             <ToastContainer />
-            <Header />
-            {children}
+            <div className="bg-[linear-gradient(to_top,_#e6e9f0_0%,_#eef1f5_100%)]">
+              <Header />
+              {children}
+            </div>
           </PostsProvider>
         </Authprovider>
 
-        {/* Load Flowbite script asynchronously */}
         <Script
           src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
           strategy="lazyOnload"

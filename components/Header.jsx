@@ -12,7 +12,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="relative  left-0 w-full flex justify-between items-center p-4  bg-white  ">
+    <div className="relative  left-0 w-full flex justify-between items-center p-4   ">
       <Link href="/">
         <Image
           src={logo}

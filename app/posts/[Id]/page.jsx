@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image"; // Import Image from next/image
+import Image from "next/image";
 import { usePosts } from "@/app/context/PostsContext";
 import { useParams } from "next/navigation";
 
@@ -18,8 +18,8 @@ const PostsDetail = () => {
               alt="ecommerce"
               className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
               src={detail?.image}
-              width={500} // Specify a width
-              height={500} // Specify a height
+              width={500}
+              height={500}
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
@@ -30,13 +30,17 @@ const PostsDetail = () => {
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
-                  {/* Your star rating SVGs here */}
                   <span className="text-gray-600 ml-3">4 Reviews</span>
                 </span>
-                {/* Your social icons here */}
               </div>
               <p className="leading-relaxed text-justify mb-8">
-                Fam locavore kickstarter distillery...
+                Sports are physical activities or games that involve a
+                competitive element, often requiring skill, strategy, and
+                physical exertion. They are typically played between individuals
+                or teams and have established rules and objectives. Sports can
+                be recreational, competitive, or professional, and they are
+                enjoyed all over the world, both for entertainment and fitness.
+                Here's an overview of some common types of sports
               </p>
 
               <div className="flex">
@@ -46,9 +50,7 @@ const PostsDetail = () => {
                 <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   Get
                 </button>
-                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                  {/* Your heart SVG here */}
-                </button>
+                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4"></button>
               </div>
             </div>
           </div>

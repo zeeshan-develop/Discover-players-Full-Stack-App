@@ -18,8 +18,8 @@ const Gamelists = () => {
                 alt={item.name}
                 className="mb-8 rounded-full inline-block border-2 border-gray-200 bg-gray-100 hover:animate-bounce cursor-pointer duration-150"
                 src={item.image}
-                width={80} // Adjust the width as needed
-                height={80} // Adjust the height as needed
+                width={80}
+                height={80}
               />
 
               <p className="text-gray-500">{item.name}</p>

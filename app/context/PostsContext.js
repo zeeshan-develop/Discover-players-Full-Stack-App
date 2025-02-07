@@ -22,7 +22,6 @@ export const PostsProvider = ({ children }) => {
       const postsArray = [];
 
       querySnapshot.forEach((doc) => {
-        // Combine the document ID with the document data
         postsArray.push({ id: doc.id, ...doc.data() });
       });
 

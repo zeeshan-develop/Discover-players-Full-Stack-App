@@ -1,12 +1,11 @@
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-  apiKey: "AIzaSyAOGgI4gnIel8Vzn_PPNBuPOKTvOPowFCA",
-  authDomain: "discoverplayers-659d4.firebaseapp.com",
-  projectId: "discoverplayers-659d4",
-  storageBucket: "discoverplayers-659d4.appspot.com",
-  messagingSenderId: "539706815609",
-  appId: "1:539706815609:web:9954b4865abfadf8fe90a8",
-  measurementId: "G-7R8MJR28B0",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
